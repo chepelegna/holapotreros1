@@ -1,12 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=>">
-    <title>Primer Hola Potreros</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Liga de Fútbol Rápido Potreros | V4</title>
+<style>
+:root{--navy:#071b33;--blue:#0d5bd7;--sky:#55bfff;--bg:#f3f6fa;--white:#fff;--ink:#142238;--muted:#66758a;--line:#dbe4ee;--green:#16834b;--red:#c83b3b}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none}.top{background:#041224;color:#dcecff;padding:8px 5%;font-size:13px;display:flex;justify-content:space-between}.nav{position:sticky;top:0;z-index:10;background:rgba(7,27,51,.97);color:white;display:flex;justify-content:space-between;align-items:center;padding:10px 5%;box-shadow:0 3px 15px #0003}.brand{display:flex;gap:10px;align-items:center;color:white;font-weight:900}.crest{width:44px;height:50px;background:white;color:var(--navy);clip-path:polygon(50% 0,92% 12%,86% 70%,50% 100%,14% 70%,8% 12%);display:grid;place-items:center;font-size:20px}.brand small{display:block;color:var(--sky);font-size:10px}.links{display:flex;gap:17px;font-size:13px;font-weight:bold}.links a{color:white}.links a:hover{color:var(--sky)}
+.hero{background:radial-gradient(circle at 80% 15%,#1975df,#092e59 40%,#061426 78%);color:white}.hero-in{max-width:1200px;margin:auto;padding:65px 5%;display:grid;grid-template-columns:1.25fr .75fr;align-items:center}.hero h1{font-size:clamp(42px,6vw,74px);line-height:.9;margin:10px 0}.hero h1 span{color:var(--sky)}.hero p{font-size:18px;color:#d8e8f8;max-width:650px}.btn{border:0;border-radius:9px;padding:12px 17px;font-weight:900;cursor:pointer;background:var(--blue);color:white;display:inline-block}.btn.white{background:white;color:var(--navy)}.ball{width:240px;height:240px;border-radius:50%;background:#eef3f8;display:grid;place-items:center;font-size:85px;margin:auto;box-shadow:0 25px 55px #0006}
+section{max-width:1200px;margin:auto;padding:45px 5%}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}.title h2{margin:0;font-size:30px}.title p{margin:5px 0 0;color:var(--muted)}.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:0 8px 25px #08213b0b}.table-wrap{overflow:auto;border-radius:12px}table{border-collapse:collapse;width:100%;min-width:850px}th{background:var(--navy);color:white;padding:12px 8px;font-size:12px}td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:center;font-weight:700}td:nth-child(2),th:nth-child(2){text-align:left}.rank{background:var(--blue);color:white}.points{background:var(--blue);color:white;font-size:17px}.top8{background:#eef6ff}.potreros{box-shadow:inset 0 2px #f2c94c,inset 0 -2px #f2c94c}.potreros td:nth-child(2){color:var(--blue)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-weight:800;font-size:12px;margin-bottom:5px}.field input,.field select{width:100%;padding:11px;border:1px solid #cbd7e4;border-radius:8px;background:white;font-size:14px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.danger{background:var(--red)}.success{background:var(--green)}.hint{font-size:12px;color:var(--muted);line-height:1.5}.match-list{display:grid;gap:10px;max-height:430px;overflow:auto}.match{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:12px}.match strong{font-size:13px}.score{font-size:20px;color:var(--navy);white-space:nowrap}.empty{color:var(--muted);padding:20px;text-align:center}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}.card h3{margin:0 0 7px}.card p{margin:0;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:var(--navy);color:white;border-radius:13px;padding:20px}.stat b{font-size:32px;display:block;color:var(--sky)}.stat span{font-size:12px;color:#c8d8ea}.notice{background:#eaf5ff;border-left:4px solid var(--blue);padding:13px;margin:15px 0;border-radius:7px;font-size:13px}footer{background:#061426;color:#cbd8e7;padding:28px;text-align:center;font-size:12px}
+@media(max-width:800px){.links{display:none}.hero-in{grid-template-columns:1fr;text-align:center}.ball{width:170px;height:170px;font-size:60px;margin-top:25px}.grid,.form-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.top{display:block;text-align:center}.top span{display:block;margin:2px}}
+</style>
 </head>
 <body>
-   <h1>Hola Potreros</h1>
-    <p>Parrafo de hola Potreros</p>
+<div class="top"><span>⚽ Pasión • Unión • Respeto</span><span>Potreros, Pénjamo, Guanajuato</span></div>
+<nav class="nav">
+<a class="brand" href="#inicio"><div class="crest">⚽</div><div>LIGA DE FÚTBOL RÁPIDO<small>POTREROS · V4</small></div></a>
+<div class="links"><a href="#tabla">Tabla</a><a href="#captura">Capturar resultado</a><a href="#resultados">Resultados</a><a href="#equipos">Equipos</a></div>
+</nav>
+
+<header class="hero" id="inicio"><div class="hero-in">
+<div><div style="color:#68c5ff;font-weight:900;letter-spacing:2px">TEMPORADA 2026</div><h1>LIGA<br><span>POTREROS</span></h1><p>V4 — Ahora puedes registrar resultados desde la propia página y la tabla se calcula automáticamente.</p><a class="btn white" href="#captura">Registrar un partido</a></div>
+<div class="ball">⚽</div>
+</div></header>
+
+<section id="tabla"><div class="title"><div><h2>Tabla de puntos</h2><p>Se actualiza automáticamente con los resultados registrados.</p></div><button class="btn" onclick="renderAll()">Actualizar</button></div>
+<div class="panel"><div class="table-wrap"><table><thead><tr><th>#</th><th>Equipos</th><th>JJ</th><th>JG</th><th>JP</th><th>JE</th><th>GA</th><th>GE</th><th>DG</th><th>Puntos</th></tr></thead><tbody id="standings"></tbody></table></div>
+<div class="notice">Sistema de puntuación utilizado: <b>victoria = 3 puntos, empate = 1 punto, derrota = 0 puntos.</b> Los equipos se ordenan por puntos y después por diferencia de goles.</div></div></section>
+
+<section id="captura"><div class="title"><div><h2>⚙️ Administrar resultados</h2><p>Agrega partidos terminados para actualizar la tabla.</p></div></div>
+<div class="grid">
+<div class="panel">
+<h3>Registrar resultado</h3>
+<div class="form-grid">
+<div class="field"><label>Fecha</label><input id="date" type="date"></div>
+<div class="field"><label>Jornada</label><input id="round" type="number" min="1" placeholder="19"></div>
+<div class="field"><label>Equipo local</label><select id="home"></select></div>
+<div class="field"><label>Equipo visitante</label><select id="away"></select></div>
+<div class="field"><label>Goles local</label><input id="hg" type="number" min="0" value="0"></div>
+<div class="field"><label>Goles visitante</label><input id="ag" type="number" min="0" value="0"></div>
+</div>
+<div class="actions"><button class="btn success" onclick="addMatch()">Guardar resultado</button><button class="btn" onclick="clearForm()">Limpiar</button></div>
+<p class="hint">Los datos quedan guardados en este navegador mediante almacenamiento local. Si abres la página en otra computadora, tendrá su propia información.</p>
+</div>
+<div class="panel"><h3>Resultados registrados</h3><div id="matchList" class="match-list"></div><div class="actions"><button class="btn danger" onclick="resetMatches()">Borrar resultados agregados</button></div></div>
+</div></section>
+
+<section id="resultados"><div class="title"><div><h2>Resultados y jornadas</h2><p>Consulta los partidos que hayas capturado.</p></div></div><div class="cards" id="roundCards"></div></section>
+
+<section id="equipos"><div class="title"><div><h2>Equipos participantes</h2><p>Los nombres se utilizan automáticamente en el formulario.</p></div></div><div class="cards" id="teamCards"></div></section>
+
+<section><div class="stats" id="stats"></div></section>
+<footer>⚽ LIGA DE FÚTBOL RÁPIDO POTREROS · V4 · Sistema local de resultados</footer>
+
+<script>
+const teams=["Halcones de la Ex Hacienda","Zapote de Parras","Aztecas FC","Atarjea","FC La Puerta de AC","Leone RN","Crucitas FC","Real Lerma FC","Potreros","La Calera","Renovación Tabiqueros","Unión La Puerta"];
+const initial={
+"Halcones de la Ex Hacienda":[17,12,2,3,56,23,39],
+"Zapote de Parras":[18,10,4,4,41,27,34],
+"Aztecas FC":[17,10,3,4,37,27,34],
+"Atarjea":[18,9,3,6,43,31,33],
+"FC La Puerta de AC":[18,10,6,2,45,31,32],
+"Leone RN":[18,8,7,3,45,29,27],
+"Crucitas FC":[17,7,6,4,32,27,25],
+"Real Lerma FC":[18,5,9,4,22,40,19],
+"Potreros":[18,4,9,5,19,34,17],
+"La Calera":[18,4,10,4,34,49,16],
+"Renovación Tabiqueros":[18,3,10,5,22,45,14],
+"Unión La Puerta":[18,2,14,2,22,54,8]
+};
+const key="ligaPotrerosV4Matches";
+let matches=JSON.parse(localStorage.getItem(key)||"[]");
+
+function save(){localStorage.setItem(key,JSON.stringify(matches))}
+function populate(){
+  ["home","away"].forEach(id=>{const s=document.getElementById(id);s.innerHTML='<option value="">Selecciona equipo</option>'+teams.map(t=>`<option>${t}</option>`).join("")})
+}
+function addMatch(){
+ const date=document.getElementById("date").value, round=document.getElementById("round").value||"19", home=document.getElementById("home").value, away=document.getElementById("away").value;
+ const hg=Number(document.getElementById("hg").value), ag=Number(document.getElementById("ag").value);
+ if(!home||!away||home===away||hg<0||ag<0){alert("Completa los datos y selecciona dos equipos diferentes.");return}
+ matches.push({date,round,home,away,hg,ag});save();clearForm();renderAll();document.getElementById("tabla").scrollIntoView({behavior:"smooth"})
+}
+function clearForm(){document.getElementById("home").value="";document.getElementById("away").value="";document.getElementById("hg").value=0;document.getElementById("ag").value=0}
+function resetMatches(){if(confirm("¿Borrar todos los resultados agregados desde esta V4?")){matches=[];save();renderAll()}}
+function stats(){
+ let s={};teams.forEach(t=>s[t]={jj:0,jg:0,jp:0,je:0,ga:0,ge:0,pts:0});
+ // The supplied table is the starting snapshot. Added matches are cumulative on top of it.
+ matches.forEach(m=>{
+   s[m.home].jj++;s[m.away].jj++;s[m.home].ga+=m.hg;s[m.home].ge+=m.ag;s[m.away].ga+=m.ag;s[m.away].ge+=m.hg;
+   if(m.hg>m.ag){s[m.home].jg++;s[m.away].jp++;s[m.home].pts+=3}
+   else if(m.hg<m.ag){s[m.away].jg++;s[m.home].jp++;s[m.away].pts+=3}
+   else{s[m.home].je++;s[m.away].je++;s[m.home].pts++;s[m.away].pts++}
+ });
+ teams.forEach(t=>{let i=initial[t];s[t].jj+=i[0];s[t].jg+=i[1];s[t].jp+=i[2];s[t].je+=i[3];s[t].ga+=i[4];s[t].ge+=i[5];s[t].pts+=i[6]});
+ return s;
+}
+function renderTable(){
+ const s=stats();let arr=teams.map(t=>({t,...s[t],dg:s[t].ga-s[t].ge})).sort((a,b)=>b.pts-a.pts||b.dg-a.dg||b.ga-a.ga);
+ document.getElementById("standings").innerHTML=arr.map((x,i)=>`<tr class="${i<8?'top8 ':''}${x.t==='Potreros'?'potreros':''}"><td class="rank">${i+1}</td><td>${x.t}</td><td>${x.jj}</td><td>${x.jg}</td><td>${x.jp}</td><td>${x.je}</td><td>${x.ga}</td><td>${x.ge}</td><td>${x.dg}</td><td class="points">${x.pts}</td></tr>`).join("");
+ return arr;
+}
+function renderMatches(){
+ const el=document.getElementById("matchList");
+ if(!matches.length){el.innerHTML='<div class="empty">Todavía no hay resultados capturados en la V4.</div>';return}
+ el.innerHTML=[...matches].reverse().map((m,i)=>`<div class="match"><div><strong>Jornada ${m.round}</strong><br><span class="hint">${m.date||"Sin fecha"}</span><br>${m.home} vs ${m.away}</div><div class="score">${m.hg} - ${m.ag}</div></div>`).join("");
+}
+function renderRounds(){
+ const el=document.getElementById("roundCards");if(!matches.length){el.innerHTML='<div class="card"><h3>Sin jornadas capturadas</h3><p>Usa el formulario para agregar el primer resultado.</p></div>';return}
+ let groups={};matches.forEach(m=>(groups[m.round]??=[]).push(m));
+ el.innerHTML=Object.keys(groups).sort((a,b)=>b-a).map(r=>`<div class="card"><h3>Jornada ${r}</h3><p>${groups[r].length} partido(s) registrado(s).</p><div class="hint" style="margin-top:10px">${groups[r].map(m=>`${m.home} <b>${m.hg}-${m.ag}</b> ${m.away}`).join("<br>")}</div></div>`).join("");
+}
+function renderTeams(arr){
+ const lookup=Object.fromEntries(arr.map(x=>[x.t,x]));document.getElementById("teamCards").innerHTML=teams.map(t=>`<div class="card"><h3>${t}</h3><p>${lookup[t].jj} JJ · ${lookup[t].pts} puntos · DG ${lookup[t].dg}</p></div>`).join("");
+}
+function renderStats(arr){
+ const totalGames=arr.reduce((a,x)=>a+x.jj,0)/2, max=arr[0];
+ document.getElementById("stats").innerHTML=`<div class="stat"><b>${teams.length}</b><span>Equipos</span></div><div class="stat"><b>${Math.round(totalGames)}</b><span>Partidos acumulados</span></div><div class="stat"><b>${max.pts}</b><span>Puntos del líder actual</span></div><div class="stat"><b>${matches.length}</b><span>Resultados capturados en V4</span></div>`;
+}
+function renderAll(){let arr=renderTable();renderMatches();renderRounds();renderTeams(arr);renderStats(arr)}
+populate();renderAll();
+</script>
 </body>
 </html>
