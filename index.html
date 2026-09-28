@@ -1,126 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Liga de Fútbol Rápido Potreros | V4</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sitio oficial de la Liga de Fútbol Rápido Potreros, Pénjamo, Guanajuato.">
+<title>Liga de Fútbol Rápido Potreros</title>
+<link rel="icon" href="assets/logo.jpg">
 <style>
-:root{--navy:#071b33;--blue:#0d5bd7;--sky:#55bfff;--bg:#f3f6fa;--white:#fff;--ink:#142238;--muted:#66758a;--line:#dbe4ee;--green:#16834b;--red:#c83b3b}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none}.top{background:#041224;color:#dcecff;padding:8px 5%;font-size:13px;display:flex;justify-content:space-between}.nav{position:sticky;top:0;z-index:10;background:rgba(7,27,51,.97);color:white;display:flex;justify-content:space-between;align-items:center;padding:10px 5%;box-shadow:0 3px 15px #0003}.brand{display:flex;gap:10px;align-items:center;color:white;font-weight:900}.crest{width:44px;height:50px;background:white;color:var(--navy);clip-path:polygon(50% 0,92% 12%,86% 70%,50% 100%,14% 70%,8% 12%);display:grid;place-items:center;font-size:20px}.brand small{display:block;color:var(--sky);font-size:10px}.links{display:flex;gap:17px;font-size:13px;font-weight:bold}.links a{color:white}.links a:hover{color:var(--sky)}
-.hero{background:radial-gradient(circle at 80% 15%,#1975df,#092e59 40%,#061426 78%);color:white}.hero-in{max-width:1200px;margin:auto;padding:65px 5%;display:grid;grid-template-columns:1.25fr .75fr;align-items:center}.hero h1{font-size:clamp(42px,6vw,74px);line-height:.9;margin:10px 0}.hero h1 span{color:var(--sky)}.hero p{font-size:18px;color:#d8e8f8;max-width:650px}.btn{border:0;border-radius:9px;padding:12px 17px;font-weight:900;cursor:pointer;background:var(--blue);color:white;display:inline-block}.btn.white{background:white;color:var(--navy)}.ball{width:240px;height:240px;border-radius:50%;background:#eef3f8;display:grid;place-items:center;font-size:85px;margin:auto;box-shadow:0 25px 55px #0006}
-section{max-width:1200px;margin:auto;padding:45px 5%}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}.title h2{margin:0;font-size:30px}.title p{margin:5px 0 0;color:var(--muted)}.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:0 8px 25px #08213b0b}.table-wrap{overflow:auto;border-radius:12px}table{border-collapse:collapse;width:100%;min-width:850px}th{background:var(--navy);color:white;padding:12px 8px;font-size:12px}td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:center;font-weight:700}td:nth-child(2),th:nth-child(2){text-align:left}.rank{background:var(--blue);color:white}.points{background:var(--blue);color:white;font-size:17px}.top8{background:#eef6ff}.potreros{box-shadow:inset 0 2px #f2c94c,inset 0 -2px #f2c94c}.potreros td:nth-child(2){color:var(--blue)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-weight:800;font-size:12px;margin-bottom:5px}.field input,.field select{width:100%;padding:11px;border:1px solid #cbd7e4;border-radius:8px;background:white;font-size:14px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.danger{background:var(--red)}.success{background:var(--green)}.hint{font-size:12px;color:var(--muted);line-height:1.5}.match-list{display:grid;gap:10px;max-height:430px;overflow:auto}.match{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:12px}.match strong{font-size:13px}.score{font-size:20px;color:var(--navy);white-space:nowrap}.empty{color:var(--muted);padding:20px;text-align:center}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}.card h3{margin:0 0 7px}.card p{margin:0;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:var(--navy);color:white;border-radius:13px;padding:20px}.stat b{font-size:32px;display:block;color:var(--sky)}.stat span{font-size:12px;color:#c8d8ea}.notice{background:#eaf5ff;border-left:4px solid var(--blue);padding:13px;margin:15px 0;border-radius:7px;font-size:13px}footer{background:#061426;color:#cbd8e7;padding:28px;text-align:center;font-size:12px}
-@media(max-width:800px){.links{display:none}.hero-in{grid-template-columns:1fr;text-align:center}.ball{width:170px;height:170px;font-size:60px;margin-top:25px}.grid,.form-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.top{display:block;text-align:center}.top span{display:block;margin:2px}}
+:root{--navy:#061626;--navy2:#0b2238;--green:#55d84a;--green2:#2fbf3c;--light:#f3f7fa;--text:#132131;--muted:#687789;--line:#dce5eb;--white:#fff;--shadow:0 12px 35px rgba(4,22,38,.12)}
+*{box-sizing:border-box;scroll-behavior:smooth} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--light);color:var(--text)} a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(6,22,38,.97);backdrop-filter:blur(8px);box-shadow:0 3px 18px rgba(0,0,0,.2)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}.brand img{width:52px;height:58px;object-fit:contain;background:#fff;border-radius:8px}.brand span{line-height:1.05;font-size:14px}.brand b{display:block;font-size:24px;letter-spacing:.5px}.menu{display:flex;gap:5px;align-items:center}.menu a{color:#fff;padding:13px 14px;border-radius:10px;font-weight:700;font-size:14px}.menu a:hover,.menu a.active{background:#12334e;color:var(--green)}.menu-btn{display:none;background:none;border:0;color:#fff;font-size:28px}
+.hero{min-height:430px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 30%,rgba(85,216,74,.2),transparent 28%),linear-gradient(115deg,#061626,#123451 58%,#071b2c)}.hero:after{content:"";position:absolute;inset:auto -5% -120px -5%;height:240px;background:rgba(85,216,74,.08);transform:rotate(-3deg)}.hero-grid{display:grid;grid-template-columns:260px 1fr;gap:45px;align-items:center;position:relative;z-index:1}.hero-logo{width:230px;height:260px;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,0,0,.35));background:#fff;border-radius:18px;padding:12px}.eyebrow{color:var(--green);font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{color:#fff;font-size:clamp(38px,6vw,74px);line-height:.95;margin:8px 0 18px;text-transform:uppercase}.hero h1 span{display:block}.hero p{color:#d9e7ef;font-size:20px;max-width:650px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:13px 20px;border-radius:10px;font-weight:800;display:inline-block}.btn.primary{background:var(--green);color:#062016}.btn.secondary{border:1px solid #628099;color:#fff}.stats{background:var(--navy);color:#fff}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}.stat{padding:25px;border-right:1px solid #284158}.stat:last-child{border:0}.stat strong{font-size:28px;display:block;color:var(--green)}.stat small{color:#c9d5df}
+section{padding:70px 0}.section-title{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.section-title h2{font-size:34px;margin:0}.section-title p{margin:0;color:var(--muted)}.grid2{display:grid;grid-template-columns:1.35fr .8fr;gap:24px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.card-head{background:var(--navy);color:#fff;padding:18px 20px;font-size:20px;font-weight:800;display:flex;justify-content:space-between;align-items:center}.table-wrap{overflow:auto}.standings{width:100%;border-collapse:collapse;min-width:720px}.standings th{background:#0c2943;color:#fff;padding:12px 10px;font-size:12px}.standings td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:center;font-weight:600}.standings td.team{text-align:left}.standings tr.top8{background:#eaf9e8}.standings tr.top8 td:first-child{border-left:5px solid var(--green2)}.pts{font-weight:900;color:#0a7e2b}.legend{padding:14px 20px;color:var(--muted);font-size:13px}.legend i{display:inline-block;width:12px;height:12px;background:#eaf9e8;border-left:4px solid var(--green2);margin-right:7px}
+.list{padding:0;margin:0;list-style:none}.match{display:grid;grid-template-columns:80px 1fr 70px;gap:12px;align-items:center;padding:17px 20px;border-bottom:1px solid var(--line)}.match:last-child{border-bottom:0}.date{font-size:12px;color:var(--muted);font-weight:700}.teams{text-align:center;font-weight:800}.score{text-align:center;font-size:19px;font-weight:900}.empty{padding:30px 20px;color:var(--muted);text-align:center}.schedule{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.game{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}.game .round{font-size:12px;font-weight:800;color:var(--green2);text-transform:uppercase}.game h3{font-size:17px;margin:12px 0}.game p{margin:5px 0;color:var(--muted);font-size:14px}
+.cta{background:linear-gradient(110deg,#071b2d,#0d3853);color:#fff;border-radius:22px;padding:42px;position:relative;overflow:hidden}.cta:after{content:"⚽";position:absolute;right:35px;bottom:-35px;font-size:170px;opacity:.08}.cta h2{font-size:42px;margin:0 0 8px}.cta p{color:#c8d7e0;max-width:650px}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:25px}.contact-card strong{display:block;margin-bottom:6px}.footer{background:#04111e;color:#d7e1e8;padding:38px 0}.footer-grid{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{display:flex;gap:12px;align-items:center}.footer-brand img{width:58px;height:64px;object-fit:contain;background:#fff;border-radius:8px}.footer small{color:#91a5b5}.to-top{position:fixed;right:18px;bottom:18px;width:45px;height:45px;border:0;border-radius:50%;background:var(--green);font-weight:900;cursor:pointer;display:none}
+@media(max-width:850px){.menu{display:none;position:absolute;top:78px;left:0;right:0;background:var(--navy);padding:12px;flex-direction:column}.menu.open{display:flex}.menu a{width:100%;text-align:center}.menu-btn{display:block}.hero-grid{grid-template-columns:1fr;text-align:center;padding:55px 0}.hero-logo{width:170px;height:190px;margin:auto}.hero p{margin:0 auto}.buttons{justify-content:center}.stats-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid #284158}.grid2,.contact-grid{grid-template-columns:1fr}.schedule{grid-template-columns:1fr 1fr}.footer-grid{flex-direction:column;text-align:center}}
+@media(max-width:520px){.stats-grid,.schedule{grid-template-columns:1fr}.stat{border-right:0}.hero h1{font-size:43px}.hero p{font-size:17px}section{padding:48px 0}.section-title{display:block}.section-title h2{font-size:28px;margin-bottom:8px}.cta{padding:28px}.cta h2{font-size:32px}.match{grid-template-columns:65px 1fr 60px;padding:14px}.brand b{font-size:19px}.brand span{font-size:11px}}
 </style>
 </head>
 <body>
-<div class="top"><span>⚽ Pasión • Unión • Respeto</span><span>Potreros, Pénjamo, Guanajuato</span></div>
-<nav class="nav">
-<a class="brand" href="#inicio"><div class="crest">⚽</div><div>LIGA DE FÚTBOL RÁPIDO<small>POTREROS · V4</small></div></a>
-<div class="links"><a href="#tabla">Tabla</a><a href="#captura">Capturar resultado</a><a href="#resultados">Resultados</a><a href="#equipos">Equipos</a></div>
-</nav>
-
-<header class="hero" id="inicio"><div class="hero-in">
-<div><div style="color:#68c5ff;font-weight:900;letter-spacing:2px">TEMPORADA 2026</div><h1>LIGA<br><span>POTREROS</span></h1><p>V4 — Ahora puedes registrar resultados desde la propia página y la tabla se calcula automáticamente.</p><a class="btn white" href="#captura">Registrar un partido</a></div>
-<div class="ball">⚽</div>
-</div></header>
-
-<section id="tabla"><div class="title"><div><h2>Tabla de puntos</h2><p>Se actualiza automáticamente con los resultados registrados.</p></div><button class="btn" onclick="renderAll()">Actualizar</button></div>
-<div class="panel"><div class="table-wrap"><table><thead><tr><th>#</th><th>Equipos</th><th>JJ</th><th>JG</th><th>JP</th><th>JE</th><th>GA</th><th>GE</th><th>DG</th><th>Puntos</th></tr></thead><tbody id="standings"></tbody></table></div>
-<div class="notice">Sistema de puntuación utilizado: <b>victoria = 3 puntos, empate = 1 punto, derrota = 0 puntos.</b> Los equipos se ordenan por puntos y después por diferencia de goles.</div></div></section>
-
-<section id="captura"><div class="title"><div><h2>⚙️ Administrar resultados</h2><p>Agrega partidos terminados para actualizar la tabla.</p></div></div>
-<div class="grid">
-<div class="panel">
-<h3>Registrar resultado</h3>
-<div class="form-grid">
-<div class="field"><label>Fecha</label><input id="date" type="date"></div>
-<div class="field"><label>Jornada</label><input id="round" type="number" min="1" placeholder="19"></div>
-<div class="field"><label>Equipo local</label><select id="home"></select></div>
-<div class="field"><label>Equipo visitante</label><select id="away"></select></div>
-<div class="field"><label>Goles local</label><input id="hg" type="number" min="0" value="0"></div>
-<div class="field"><label>Goles visitante</label><input id="ag" type="number" min="0" value="0"></div>
-</div>
-<div class="actions"><button class="btn success" onclick="addMatch()">Guardar resultado</button><button class="btn" onclick="clearForm()">Limpiar</button></div>
-<p class="hint">Los datos quedan guardados en este navegador mediante almacenamiento local. Si abres la página en otra computadora, tendrá su propia información.</p>
-</div>
-<div class="panel"><h3>Resultados registrados</h3><div id="matchList" class="match-list"></div><div class="actions"><button class="btn danger" onclick="resetMatches()">Borrar resultados agregados</button></div></div>
-</div></section>
-
-<section id="resultados"><div class="title"><div><h2>Resultados y jornadas</h2><p>Consulta los partidos que hayas capturado.</p></div></div><div class="cards" id="roundCards"></div></section>
-
-<section id="equipos"><div class="title"><div><h2>Equipos participantes</h2><p>Los nombres se utilizan automáticamente en el formulario.</p></div></div><div class="cards" id="teamCards"></div></section>
-
-<section><div class="stats" id="stats"></div></section>
-<footer>⚽ LIGA DE FÚTBOL RÁPIDO POTREROS · V4 · Sistema local de resultados</footer>
-
+<header class="topbar"><div class="container nav"><a class="brand" href="#inicio"><img src="assets/logo.jpg" alt="Logo Liga de Fútbol Rápido Potreros"><span>LIGA DE FÚTBOL RÁPIDO<b>POTREROS</b></span></a><button class="menu-btn" aria-label="Abrir menú">☰</button><nav class="menu"><a class="active" href="#inicio">Inicio</a><a href="#tabla">Tabla de puntos</a><a href="#resultados">Resultados</a><a href="#jornadas">Jornadas</a><a href="#contacto">Contacto</a></nav></div></header>
+<main>
+<section id="inicio" class="hero"><div class="container hero-grid"><img class="hero-logo" src="assets/logo.jpg" alt="Escudo oficial de la Liga de Fútbol Rápido Potreros"><div><div class="eyebrow">Liga de Fútbol Rápido</div><h1>Potreros<span>¡Pasión por el fútbol!</span></h1><p>Información de la liga, tabla de puntos, resultados y jornadas en un solo lugar.</p><div class="buttons"><a class="btn primary" href="#tabla">Ver tabla de puntos</a><a class="btn secondary" href="#jornadas">Ver jornadas</a></div></div></div></section>
+<div class="stats"><div class="container stats-grid"><div class="stat"><strong>12</strong><small>Equipos registrados</small></div><div class="stat"><strong>8</strong><small>Zona de clasificación destacada</small></div><div class="stat"><strong>Libre</strong><small>Categoría</small></div><div class="stat"><strong>Potreros</strong><small>Pénjamo, Guanajuato</small></div></div></div>
+<section id="tabla"><div class="container"><div class="section-title"><div><h2>Tabla de puntos</h2><p>Clasificación de la liga.</p></div><a class="btn primary" href="#contacto">Actualizar información</a></div><div class="card"><div class="card-head"><span>🏆 Posiciones</span><span>Top 8 destacado</span></div><div class="table-wrap"><table class="standings"><thead><tr><th>#</th><th>Equipo</th><th>JJ</th><th>JG</th><th>JP</th><th>JE</th><th>GA</th><th>GE</th><th>DG</th><th>Puntos</th></tr></thead><tbody>
+<tr class="top8"><td>1</td><td class="team">Halcones de la Ex Hacienda</td><td>17</td><td>12</td><td>2</td><td>3</td><td>56</td><td>23</td><td>33</td><td class="pts">39</td></tr>
+<tr class="top8"><td>2</td><td class="team">Zapote de Parras</td><td>18</td><td>10</td><td>4</td><td>4</td><td>41</td><td>27</td><td>14</td><td class="pts">34</td></tr>
+<tr class="top8"><td>3</td><td class="team">Aztecas FC</td><td>17</td><td>10</td><td>3</td><td>4</td><td>37</td><td>27</td><td>10</td><td class="pts">34</td></tr>
+<tr class="top8"><td>4</td><td class="team">Atarjea</td><td>18</td><td>9</td><td>3</td><td>6</td><td>43</td><td>31</td><td>12</td><td class="pts">33</td></tr>
+<tr class="top8"><td>5</td><td class="team">FC La Puerta de AC</td><td>18</td><td>10</td><td>6</td><td>2</td><td>45</td><td>31</td><td>14</td><td class="pts">32</td></tr>
+<tr class="top8"><td>6</td><td class="team">Leone RN</td><td>18</td><td>8</td><td>7</td><td>3</td><td>45</td><td>29</td><td>16</td><td class="pts">27</td></tr>
+<tr class="top8"><td>7</td><td class="team">Crucitas FC</td><td>17</td><td>7</td><td>6</td><td>4</td><td>32</td><td>27</td><td>5</td><td class="pts">25</td></tr>
+<tr class="top8"><td>8</td><td class="team">Real Lerma FC</td><td>18</td><td>5</td><td>9</td><td>4</td><td>22</td><td>40</td><td>-18</td><td class="pts">19</td></tr>
+<tr><td>9</td><td class="team">La Calera</td><td>16</td><td>4</td><td>9</td><td>3</td><td>33</td><td>44</td><td>-11</td><td class="pts">15</td></tr>
+<tr><td>10</td><td class="team">Potreros</td><td>16</td><td>4</td><td>9</td><td>3</td><td>16</td><td>31</td><td>-15</td><td class="pts">15</td></tr>
+<tr><td>11</td><td class="team">Renovación Tabiqueros</td><td>16</td><td>3</td><td>9</td><td>4</td><td>21</td><td>41</td><td>-20</td><td class="pts">13</td></tr>
+<tr><td>12</td><td class="team">Unión La Puerta</td><td>17</td><td>2</td><td>13</td><td>2</td><td>21</td><td>52</td><td>-31</td><td class="pts">8</td></tr>
+</tbody></table></div><div class="legend"><i></i> Zona de clasificación: primeros 8 lugares.</div></div></div></section>
+<section id="resultados"><div class="container"><div class="section-title"><div><h2>Resultados</h2><p>Sección preparada para publicar los marcadores oficiales.</p></div></div><div class="card"><div class="card-head"><span>⚽ Últimos partidos</span></div><div class="empty">Los resultados se pueden cargar aquí conforme se disputen las jornadas. Esta V5 deja la sección lista para actualizar sin cambiar el diseño.</div></div></div></section>
+<section id="jornadas"><div class="container"><div class="section-title"><div><h2>Jornadas</h2><p>Calendario preparado para la programación de partidos.</p></div></div><div class="schedule">
+<div class="game"><div class="round">Jornada</div><h3>Programación por confirmar</h3><p>📍 Cancha Potreros</p><p>Los partidos y horarios oficiales aparecerán aquí.</p></div>
+<div class="game"><div class="round">Jornada</div><h3>Programación por confirmar</h3><p>📍 Cancha Potreros</p><p>Actualiza esta tarjeta con la fecha y hora.</p></div>
+<div class="game"><div class="round">Jornada</div><h3>Programación por confirmar</h3><p>📍 Cancha Potreros</p><p>La página ya está preparada para mostrar el calendario.</p></div>
+</div></div></section>
+<section><div class="container"><div class="cta"><h2>El fútbol nos une</h2><p>¡Vamos Potreros! Esta página está diseñada para que la liga tenga un espacio propio en internet y pueda compartir su información con jugadores, equipos y aficionados.</p><a class="btn primary" href="#contacto">Información de contacto</a></div></div></section>
+<section id="contacto"><div class="container"><div class="section-title"><div><h2>Contacto</h2><p>Datos básicos de la liga.</p></div></div><div class="contact-grid"><div class="contact-card"><strong>📍 Sede</strong>Potreros, Pénjamo, Guanajuato</div><div class="contact-card"><strong>⚽ Liga</strong>Liga de Fútbol Rápido Potreros</div></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div class="footer-brand"><img src="assets/logo.jpg" alt="Logo"><div><b>LIGA DE FÚTBOL RÁPIDO POTREROS</b><br><small>Pasión, juego y compañerismo.</small></div></div><small>© 2026 Liga de Fútbol Rápido Potreros</small></div></footer>
+<button class="to-top" aria-label="Volver arriba">↑</button>
 <script>
-const teams=["Halcones de la Ex Hacienda","Zapote de Parras","Aztecas FC","Atarjea","FC La Puerta de AC","Leone RN","Crucitas FC","Real Lerma FC","Potreros","La Calera","Renovación Tabiqueros","Unión La Puerta"];
-const initial={
-"Halcones de la Ex Hacienda":[17,12,2,3,56,23,39],
-"Zapote de Parras":[18,10,4,4,41,27,34],
-"Aztecas FC":[17,10,3,4,37,27,34],
-"Atarjea":[18,9,3,6,43,31,33],
-"FC La Puerta de AC":[18,10,6,2,45,31,32],
-"Leone RN":[18,8,7,3,45,29,27],
-"Crucitas FC":[17,7,6,4,32,27,25],
-"Real Lerma FC":[18,5,9,4,22,40,19],
-"Potreros":[18,4,9,5,19,34,17],
-"La Calera":[18,4,10,4,34,49,16],
-"Renovación Tabiqueros":[18,3,10,5,22,45,14],
-"Unión La Puerta":[18,2,14,2,22,54,8]
-};
-const key="ligaPotrerosV4Matches";
-let matches=JSON.parse(localStorage.getItem(key)||"[]");
-
-function save(){localStorage.setItem(key,JSON.stringify(matches))}
-function populate(){
-  ["home","away"].forEach(id=>{const s=document.getElementById(id);s.innerHTML='<option value="">Selecciona equipo</option>'+teams.map(t=>`<option>${t}</option>`).join("")})
-}
-function addMatch(){
- const date=document.getElementById("date").value, round=document.getElementById("round").value||"19", home=document.getElementById("home").value, away=document.getElementById("away").value;
- const hg=Number(document.getElementById("hg").value), ag=Number(document.getElementById("ag").value);
- if(!home||!away||home===away||hg<0||ag<0){alert("Completa los datos y selecciona dos equipos diferentes.");return}
- matches.push({date,round,home,away,hg,ag});save();clearForm();renderAll();document.getElementById("tabla").scrollIntoView({behavior:"smooth"})
-}
-function clearForm(){document.getElementById("home").value="";document.getElementById("away").value="";document.getElementById("hg").value=0;document.getElementById("ag").value=0}
-function resetMatches(){if(confirm("¿Borrar todos los resultados agregados desde esta V4?")){matches=[];save();renderAll()}}
-function stats(){
- let s={};teams.forEach(t=>s[t]={jj:0,jg:0,jp:0,je:0,ga:0,ge:0,pts:0});
- // The supplied table is the starting snapshot. Added matches are cumulative on top of it.
- matches.forEach(m=>{
-   s[m.home].jj++;s[m.away].jj++;s[m.home].ga+=m.hg;s[m.home].ge+=m.ag;s[m.away].ga+=m.ag;s[m.away].ge+=m.hg;
-   if(m.hg>m.ag){s[m.home].jg++;s[m.away].jp++;s[m.home].pts+=3}
-   else if(m.hg<m.ag){s[m.away].jg++;s[m.home].jp++;s[m.away].pts+=3}
-   else{s[m.home].je++;s[m.away].je++;s[m.home].pts++;s[m.away].pts++}
- });
- teams.forEach(t=>{let i=initial[t];s[t].jj+=i[0];s[t].jg+=i[1];s[t].jp+=i[2];s[t].je+=i[3];s[t].ga+=i[4];s[t].ge+=i[5];s[t].pts+=i[6]});
- return s;
-}
-function renderTable(){
- const s=stats();let arr=teams.map(t=>({t,...s[t],dg:s[t].ga-s[t].ge})).sort((a,b)=>b.pts-a.pts||b.dg-a.dg||b.ga-a.ga);
- document.getElementById("standings").innerHTML=arr.map((x,i)=>`<tr class="${i<8?'top8 ':''}${x.t==='Potreros'?'potreros':''}"><td class="rank">${i+1}</td><td>${x.t}</td><td>${x.jj}</td><td>${x.jg}</td><td>${x.jp}</td><td>${x.je}</td><td>${x.ga}</td><td>${x.ge}</td><td>${x.dg}</td><td class="points">${x.pts}</td></tr>`).join("");
- return arr;
-}
-function renderMatches(){
- const el=document.getElementById("matchList");
- if(!matches.length){el.innerHTML='<div class="empty">Todavía no hay resultados capturados en la V4.</div>';return}
- el.innerHTML=[...matches].reverse().map((m,i)=>`<div class="match"><div><strong>Jornada ${m.round}</strong><br><span class="hint">${m.date||"Sin fecha"}</span><br>${m.home} vs ${m.away}</div><div class="score">${m.hg} - ${m.ag}</div></div>`).join("");
-}
-function renderRounds(){
- const el=document.getElementById("roundCards");if(!matches.length){el.innerHTML='<div class="card"><h3>Sin jornadas capturadas</h3><p>Usa el formulario para agregar el primer resultado.</p></div>';return}
- let groups={};matches.forEach(m=>(groups[m.round]??=[]).push(m));
- el.innerHTML=Object.keys(groups).sort((a,b)=>b-a).map(r=>`<div class="card"><h3>Jornada ${r}</h3><p>${groups[r].length} partido(s) registrado(s).</p><div class="hint" style="margin-top:10px">${groups[r].map(m=>`${m.home} <b>${m.hg}-${m.ag}</b> ${m.away}`).join("<br>")}</div></div>`).join("");
-}
-function renderTeams(arr){
- const lookup=Object.fromEntries(arr.map(x=>[x.t,x]));document.getElementById("teamCards").innerHTML=teams.map(t=>`<div class="card"><h3>${t}</h3><p>${lookup[t].jj} JJ · ${lookup[t].pts} puntos · DG ${lookup[t].dg}</p></div>`).join("");
-}
-function renderStats(arr){
- const totalGames=arr.reduce((a,x)=>a+x.jj,0)/2, max=arr[0];
- document.getElementById("stats").innerHTML=`<div class="stat"><b>${teams.length}</b><span>Equipos</span></div><div class="stat"><b>${Math.round(totalGames)}</b><span>Partidos acumulados</span></div><div class="stat"><b>${max.pts}</b><span>Puntos del líder actual</span></div><div class="stat"><b>${matches.length}</b><span>Resultados capturados en V4</span></div>`;
-}
-function renderAll(){let arr=renderTable();renderMatches();renderRounds();renderTeams(arr);renderStats(arr)}
-populate();renderAll();
+const btn=document.querySelector('.menu-btn'),menu=document.querySelector('.menu');btn.addEventListener('click',()=>menu.classList.toggle('open'));document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));const top=document.querySelector('.to-top');window.addEventListener('scroll',()=>top.style.display=scrollY>500?'block':'none');top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 </script>
-</body>
-</html>
+</body></html>
